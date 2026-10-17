@@ -1,0 +1,121 @@
+name: emp-management-microservices
+
+services:
+  # Note: Lowercase 'kafka' is the proper standard syntax
+  kafka:
+    image: apache/kafka:latest
+    container_name: broker
+    restart: always
+    ports:
+      - "9092:9092"
+    environment:
+      # Mandatory KRaft variables for apache/kafka:latest to run without Zookeeper
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: 'broker,controller'
+      KAFKA_CONTROLLER_QUORUM_VOTERS: '1@localhost:9093'
+      CLUSTER_ID: 'Mk3OEYBSD3TuYw3RwvUsLw=='
+
+      # Corrected Network Listeners
+      KAFKA_LISTENERS: 'PLAINTEXT://0.0.0.0:29092,CONTROLLER://0.0.0.0:9093,PLAINTEXT_HOST://0.0.0.0:9092'
+      KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT'
+      KAFKA_CONTROLLER_LISTENER_NAMES: 'CONTROLLER'
+      KAFKA_INTER_BROKER_LISTENER_NAME: 'PLAINTEXT'
+
+      # Your requested settings
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_NUM_PARTITIONS: 3
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+    networks:
+      - emp-network
+
+  # Note: Lowercase 'rabbitmq'
+  rabbitmq:
+    image: rabbitmq:4-management
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    networks:
+      - emp-network
+
+  # 4. Keycloak Identity and Access Management
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.7.1
+    container_name: keycloak
+    restart: always
+    ports:
+      - "8880:8080"
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    command: start-dev
+    networks:
+      - emp-network
+
+
+
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+    ports:
+      - "4317:4317"   # gRPC
+      - "4318:4318"   # HTTP
+    networks:
+      - emp-network
+
+  # 5. Zipkin for tracing
+  zipkin:
+    image: openzipkin/zipkin:3.6.1
+    container_name: zipkin
+    restart: always
+    ports:
+      - "9411:9411"
+    networks:
+      - emp-network
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - emp-network
+
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    networks:
+      - emp-network
+
+  loki:
+    image: grafana/loki:main-7407b88
+    ports:
+      - "3100:3100"
+    networks:
+      - emp-network
+
+  promtail:
+    image: grafana/promtail:3.6.10
+    volumes:
+      - /var/log:/var/log
+      - ./promtail-config.yaml:/etc/promtail/promtail-config.yaml
+    command: -config.file=/etc/promtail/promtail-config.yaml
+
+networks:
+  emp-network:
+    driver: bridge

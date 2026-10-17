@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Home Page</h2>
+<button onclick="getServices()">Get Services</button>
+<div id="result"></div>
+<script>
+    function getServices(){
+        fetch('/services', {
+            headers:{'Authorization':'Bearer '+localStorage.getItem("jwt")}
+        }).then(res=>res.text()).then(data=>{
+            document.getElementById("result").innerText=data;
+        });
+    }
+</script>
+</body>
+</html>

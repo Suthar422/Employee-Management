@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: notification
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: booking-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+#        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+        spring.json.trusted.packages: "*"
+        spring.json.value.default.type: com.bookseat.notification.dto.SeatBooking
+
+
+
+server:
+  port: 7081
+
+rabbitmq:
+  queue:
+    email: email-queue
+    sms: sms-queue
+
+kafka:
+  topic:
+    email: email-topic
+    sms: sms-topic
+  group: booking-group
+
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # 1.0 means 100% of requests are traced. Reduce in production (e.g., 0.1)
+    zipkin:
+      endpoint: http://localhost:9411/api/v2/spans
+
+# Optional: Customize log format to visually verify Trace ID and Span ID inclusions
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
