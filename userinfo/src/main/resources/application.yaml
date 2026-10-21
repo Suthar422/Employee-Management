@@ -58,26 +58,47 @@ resilience4j:
           - java.lang.IllegalArgumentException
 
 management:
-  health:
-    circuit breakers:
-      enabled: true
   endpoints:
     web:
       exposure:
-        include: '*'
-
-  tracing:
-    sampling:
-      probability: 1.0 # 1.0 means 100% of requests are traced. Reduce in production (e.g., 0.1)
-  metrics:
-    export:
-      otlp:
-        url: http://otel-collector:4318/v1/metrics
-  open-telemetry:
+        include: "*"
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    shutdown:
+      access: unrestricted
+    health:
+      probes:
+        enabled: true
+  info:
+    env:
+      enabled: true
+  opentelemetry:
+    resource-attributes:
+      service.name: ${spring.application.name}
+      deployment.environment: "development"
+    logging:
+      export:
+        otlp:
+          endpoint: http://localhost:4318/v1/logs
     tracing:
       export:
         otlp:
-          endpoint: http://otel-collector:4318/v1/traces
+          endpoint: http://localhost:4318/v1/traces
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    metrics:
+      export:
+        url: http://localhost:4318/v1/metrics
+        step: 10s
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 
 # Optional: Customize log format to visually verify Trace ID and Span ID inclusions

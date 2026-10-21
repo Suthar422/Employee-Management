@@ -61,16 +61,17 @@ services:
 
 
 
-  otel-collector:
-    image: otel/opentelemetry-collector-contrib:latest
-    command: ["--config=/etc/otel-collector-config.yaml"]
-    volumes:
-      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
-    ports:
-      - "4317:4317"   # gRPC
-      - "4318:4318"   # HTTP
-    networks:
-      - emp-network
+#  otel-collector:
+#    image: otel/opentelemetry-collector-contrib:latest
+#    container_name: otel-collector
+#    command: ["--config=/etc/otel-collector-config.yaml"]
+#    volumes:
+#      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+#    ports:
+#      - "4317:4317"   # gRPC
+#      - "4318:4318"   # HTTP
+#    networks:
+#      - emp-network
 
   # 5. Zipkin for tracing
   zipkin:
@@ -82,39 +83,48 @@ services:
     networks:
       - emp-network
 
-  prometheus:
-    image: prom/prometheus
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    ports:
-      - "9090:9090"
-    networks:
-      - emp-network
+#  prometheus:
+#    image: prom/prometheus
+#    container_name: prometheus
+#    ports:
+#      - "9090:9090"
+#    volumes:
+#      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+#    networks:
+#      - emp-network
 
 
-  grafana:
-    image: grafana/grafana
+  grafana-lgtm:
+    image: grafana/otel-lgtm
+    container_name: grafana-lgtm-ms
     ports:
-      - "3000:3000"
+      - '3000:3000'
+      - '4317:4317'
+      - '4318:4318'
+
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
     networks:
       - emp-network
 
-  loki:
-    image: grafana/loki:main-7407b88
-    ports:
-      - "3100:3100"
-    networks:
-      - emp-network
+#  loki:
+#    image: grafana/loki:main-7407b88
+#    container_name: loki
+#    ports:
+#      - "3100:3100"
+#    networks:
+#      - emp-network
+#
+#  promtail:
+#    image: grafana/promtail:3.6.10
+#    container_name: promtail
+#    volumes:
+#      - /var/log:/var/log
+#      - ./promtail-config.yaml:/etc/promtail/promtail-config.yaml
+#    command: -config.file=/etc/promtail/promtail-config.yaml
 
-  promtail:
-    image: grafana/promtail:3.6.10
-    volumes:
-      - /var/log:/var/log
-      - ./promtail-config.yaml:/etc/promtail/promtail-config.yaml
-    command: -config.file=/etc/promtail/promtail-config.yaml
+
 
 networks:
   emp-network:

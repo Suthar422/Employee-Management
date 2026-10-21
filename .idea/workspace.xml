@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6beea415-85bb-4bf0-9532-083915791eb3" name="Changes" comment="" />
+    <list default="true" id="6beea415-85bb-4bf0-9532-083915791eb3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/bookseat/apigateway/config/OpenTelemetryLoggingConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigateway/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookseat/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-registry/src/main/java/com/bookseat/serviceregistry/config/OpenTelemetryLoggingConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-registry/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userinfo/src/main/java/com/bookseat/userinfo/config/HttpClientObservabilityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userinfo/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookseat/otel-collector/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bookseat/otel-collector/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookseat/otel-collector/promtail-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bookseat/otel-collector/promtail-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookseat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bookseat/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookseat/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bookseat/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-registry/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-registry/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-registry/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/service-registry/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userinfo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/userinfo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userinfo/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/userinfo/src/main/resources/application.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +54,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Suthar422/Udemy-Microservices.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/Suthar422/Employee-Management.git&quot;,
     &quot;accountId&quot;: &quot;b579e365-f22d-405e-84f6-f020daaeaf3c&quot;
   }
 }</component>
@@ -58,59 +77,59 @@
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0000000000030167" />
-      <entry key="S30" value="1.0002898205685793" />
-      <entry key="S60" value="1.0293242809699652" />
-      <entry key="M2" value="1.2962242001865745" />
-      <entry key="M5" value="2.2197696469004295" />
-      <entry key="M10" value="3.2637334176863626" />
-      <entry key="M15" value="4.184155420426028" />
-      <entry key="M30" value="6.39671499934273" />
-      <entry key="H1" value="8.781529531906617" />
-      <entry key="H2" value="10.71372036324424" />
-      <entry key="H4" value="12.285333952024166" />
-      <entry key="D1" value="118.86500636667581" />
-      <entry key="W1" value="807.5628783697695" />
+      <entry key="S2" value="1.0000020663269826" />
+      <entry key="S5" value="1.0053220581906026" />
+      <entry key="S10" value="1.072952437866071" />
+      <entry key="S30" value="1.4178671906681395" />
+      <entry key="S60" value="1.6548840265732754" />
+      <entry key="M2" value="1.9633692985313482" />
+      <entry key="M5" value="2.8436541008737786" />
+      <entry key="M10" value="3.625494835129673" />
+      <entry key="M15" value="4.012606397544526" />
+      <entry key="M30" value="4.882178364643623" />
+      <entry key="H1" value="7.368801839681128" />
+      <entry key="H2" value="12.30171659303092" />
+      <entry key="H4" value="18.4732218846748" />
+      <entry key="D1" value="46.87796259778236" />
+      <entry key="W1" value="626.8948825422179" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="1.3133984617886815E-260" />
-      <entry key="S2" value="1.0705306990124354E-65" />
-      <entry key="S5" value="1.0276368052907333E-26" />
-      <entry key="S10" value="1.0137242254630859E-13" />
-      <entry key="S30" value="4.6627264977200174E-5" />
-      <entry key="S60" value="0.006828417078731123" />
-      <entry key="M2" value="0.08266717643241558" />
-      <entry key="M5" value="0.3849730674225027" />
-      <entry key="M10" value="0.7342692772023686" />
-      <entry key="M15" value="0.9697345602852327" />
-      <entry key="M30" value="1.3499304607682938" />
-      <entry key="H1" value="1.6518186492695799" />
-      <entry key="H2" value="1.9518510981855788" />
-      <entry key="H4" value="2.321881287131799" />
-      <entry key="D1" value="17.140579182835875" />
-      <entry key="W1" value="127.20757980452632" />
+      <entry key="MS100" value="5.989559743891058E-105" />
+      <entry key="MS500" value="1.430470744677422E-21" />
+      <entry key="S2" value="6.149923946326958E-6" />
+      <entry key="S5" value="0.008232806309398934" />
+      <entry key="S10" value="0.09073481310610021" />
+      <entry key="S30" value="0.44935679813256185" />
+      <entry key="S60" value="0.6703408074498836" />
+      <entry key="M2" value="0.818743432004119" />
+      <entry key="M5" value="0.9231220661597123" />
+      <entry key="M10" value="0.9608491882158868" />
+      <entry key="M15" value="0.9755480764675144" />
+      <entry key="M30" value="1.0486384382934244" />
+      <entry key="H1" value="1.394716141626831" />
+      <entry key="H2" value="2.228098415658964" />
+      <entry key="H4" value="3.3946607397621467" />
+      <entry key="D1" value="7.997964190223633" />
+      <entry key="W1" value="99.5112502545909" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.8645372313078652" />
-      <entry key="MS500" value="0.9713074955416333" />
-      <entry key="S2" value="0.992748375440308" />
-      <entry key="S5" value="0.9970930153280337" />
-      <entry key="S10" value="0.9985454498086869" />
-      <entry key="S30" value="0.9998385780719086" />
-      <entry key="S60" value="1.0352005419086963" />
-      <entry key="M2" value="1.3749932729861474" />
-      <entry key="M5" value="2.5983897860557055" />
-      <entry key="M10" value="3.992683047265019" />
-      <entry key="M15" value="5.149480227406836" />
-      <entry key="M30" value="7.743680966027632" />
-      <entry key="H1" value="10.431498476650232" />
-      <entry key="H2" value="12.664418470394201" />
-      <entry key="H4" value="14.606475032210938" />
-      <entry key="D1" value="136.00338828793326" />
-      <entry key="W1" value="934.7682070002647" />
+      <entry key="MS100" value="0.9330329915368074" />
+      <entry key="MS500" value="0.9862327044933592" />
+      <entry key="S2" value="0.9965470515419315" />
+      <entry key="S5" value="1.011340056621365" />
+      <entry key="S10" value="1.1582913351287936" />
+      <entry key="S30" value="1.85907692046185" />
+      <entry key="S60" value="2.319174274704066" />
+      <entry key="M2" value="2.7784084715161597" />
+      <entry key="M5" value="3.765079668543216" />
+      <entry key="M10" value="4.585447848347092" />
+      <entry key="M15" value="4.987525803916448" />
+      <entry key="M30" value="5.930177215361882" />
+      <entry key="H1" value="8.762366604308651" />
+      <entry key="H2" value="14.528400465110384" />
+      <entry key="H4" value="21.86667643822963" />
+      <entry key="D1" value="54.87531861652124" />
+      <entry key="W1" value="726.4044403904466" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -122,53 +141,61 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Docker.bookseat.Rabbitmq: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.api-gateway [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.api-gateway [verify].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApigatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.AuthenticationApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.BookseatApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.NotificationApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceRegistryApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UserinfoApplication.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jagdi/IdeaProjects/emp-management&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Unnamed.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Docker.bookseat.Rabbitmq: Compose Deployment.executor": "Run",
+    "Maven.api-gateway [clean].executor": "Run",
+    "Maven.api-gateway [verify].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.ApigatewayApplication.executor": "Run",
+    "Spring Boot.AuthenticationApplication.executor": "Run",
+    "Spring Boot.BookseatApplication.executor": "Run",
+    "Spring Boot.NotificationApplication.executor": "Run",
+    "Spring Boot.ServiceRegistryApplication.executor": "Run",
+    "Spring Boot.UserinfoApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/jagdi/IdeaProjects/emp-management/bookseat/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jagdi\IdeaProjects\emp-management\bookseat\src\main\resources" />
+      <recent name="C:\Users\jagdi\IdeaProjects\emp-management\apigateway\src\main\resources" />
+      <recent name="C:\Users\jagdi\IdeaProjects\emp-management\service-registry\src\main\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jagdi\IdeaProjects\emp-management\bookseat\otel-collector" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bookseat.userinfo.client" />
+      <recent name="com.bookseat.apigateway.config" />
       <recent name="com.infyme.bookseat.service.impl" />
       <recent name="com.bookseat.userinfo.dto" />
       <recent name="com.bookseat.notification.config" />
@@ -205,7 +232,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServiceRegistryApplication">
+  <component name="RunManager" selected="Spring Boot.ApigatewayApplication">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <module name="emp-management" />
       <method v="2">
@@ -372,12 +399,24 @@
       <workItem from="1790869254717" duration="7000" />
       <workItem from="1791369361735" duration="5871000" />
       <workItem from="1791623431069" duration="32765000" />
-      <workItem from="1792129233155" duration="9884000" />
+      <workItem from="1792129233155" duration="28661000" />
+      <workItem from="1792475838239" duration="15386000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
