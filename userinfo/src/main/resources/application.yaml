@@ -5,6 +5,14 @@ spring:
   application:
     name: userinfo-service
 
+  # this is for tracing and metrics and pass the same trace id and span id to the downstream (calling) services
+  reactor:
+    context-propagation: auto
+
+  cloud:
+    openfeign:
+      micrometer:
+        enabled: true
 #  datasource:
 #    url: jdbc:h2:mem:bookseat
 #    driverClassName: org.h2.Driver

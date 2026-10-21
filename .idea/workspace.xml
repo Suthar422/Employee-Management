@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6beea415-85bb-4bf0-9532-083915791eb3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/bookseat/apigateway/config/OpenTelemetryLoggingConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apigateway/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bookseat/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-registry/src/main/java/com/bookseat/serviceregistry/config/OpenTelemetryLoggingConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-registry/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userinfo/src/main/java/com/bookseat/userinfo/config/HttpClientObservabilityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userinfo/src/main/resources/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookseat/otel-collector/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bookseat/otel-collector/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookseat/otel-collector/promtail-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bookseat/otel-collector/promtail-config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookseat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bookseat/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookseat/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bookseat/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-registry/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-registry/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-registry/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/service-registry/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookseat/otel-collector/otel-collector-config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookseat/otel-collector/prometheus.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookseat/otel-collector/promtail-config.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/userinfo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/userinfo/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userinfo/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/userinfo/src/main/resources/application.yaml" afterDir="false" />
     </list>
@@ -30,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="122" />
+    <option name="cachedIndexableFilesCount" value="131" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -44,6 +33,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -75,61 +69,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000020663269826" />
-      <entry key="S5" value="1.0053220581906026" />
-      <entry key="S10" value="1.072952437866071" />
-      <entry key="S30" value="1.4178671906681395" />
-      <entry key="S60" value="1.6548840265732754" />
-      <entry key="M2" value="1.9633692985313482" />
-      <entry key="M5" value="2.8436541008737786" />
-      <entry key="M10" value="3.625494835129673" />
-      <entry key="M15" value="4.012606397544526" />
-      <entry key="M30" value="4.882178364643623" />
-      <entry key="H1" value="7.368801839681128" />
-      <entry key="H2" value="12.30171659303092" />
-      <entry key="H4" value="18.4732218846748" />
-      <entry key="D1" value="46.87796259778236" />
-      <entry key="W1" value="626.8948825422179" />
+      <entry key="MS100" value="1.4988325005756393" />
+      <entry key="MS500" value="3.2840615840917335" />
+      <entry key="S2" value="7.614845126430894" />
+      <entry key="S5" value="14.895792310875233" />
+      <entry key="S10" value="27.392724163903196" />
+      <entry key="S30" value="62.58538302640331" />
+      <entry key="S60" value="87.50852351142593" />
+      <entry key="M2" value="107.1551901587873" />
+      <entry key="M5" value="123.30637577801292" />
+      <entry key="M10" value="131.40269540634637" />
+      <entry key="M15" value="135.38384692403744" />
+      <entry key="M30" value="141.16801470925114" />
+      <entry key="H1" value="146.59627050253764" />
+      <entry key="H2" value="153.23224529832217" />
+      <entry key="H4" value="160.70954657218394" />
+      <entry key="D1" value="190.88162253396047" />
+      <entry key="W1" value="770.2272356816545" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="5.989559743891058E-105" />
-      <entry key="MS500" value="1.430470744677422E-21" />
-      <entry key="S2" value="6.149923946326958E-6" />
-      <entry key="S5" value="0.008232806309398934" />
-      <entry key="S10" value="0.09073481310610021" />
-      <entry key="S30" value="0.44935679813256185" />
-      <entry key="S60" value="0.6703408074498836" />
-      <entry key="M2" value="0.818743432004119" />
-      <entry key="M5" value="0.9231220661597123" />
-      <entry key="M10" value="0.9608491882158868" />
-      <entry key="M15" value="0.9755480764675144" />
-      <entry key="M30" value="1.0486384382934244" />
-      <entry key="H1" value="1.394716141626831" />
-      <entry key="H2" value="2.228098415658964" />
-      <entry key="H4" value="3.3946607397621467" />
-      <entry key="D1" value="7.997964190223633" />
-      <entry key="W1" value="99.5112502545909" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="3.90137273388628E-188" />
+      <entry key="S5" value="1.0876445243468615E-75" />
+      <entry key="S10" value="3.297945609537634E-38" />
+      <entry key="S30" value="3.2068685829834383E-13" />
+      <entry key="S60" value="5.662942278254852E-7" />
+      <entry key="M2" value="7.539471261059312E-4" />
+      <entry key="M5" value="0.06089762983791456" />
+      <entry key="M10" value="0.30501787372225647" />
+      <entry key="M15" value="0.5497407123971865" />
+      <entry key="M30" value="1.05225639640885" />
+      <entry key="H1" value="1.68321147153081" />
+      <entry key="H2" value="2.6732640633328963" />
+      <entry key="H4" value="3.9812938904690425" />
+      <entry key="D1" value="8.84204887613797" />
+      <entry key="W1" value="100.2483079809846" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9330329915368074" />
-      <entry key="MS500" value="0.9862327044933592" />
-      <entry key="S2" value="0.9965470515419315" />
-      <entry key="S5" value="1.011340056621365" />
-      <entry key="S10" value="1.1582913351287936" />
-      <entry key="S30" value="1.85907692046185" />
-      <entry key="S60" value="2.319174274704066" />
-      <entry key="M2" value="2.7784084715161597" />
-      <entry key="M5" value="3.765079668543216" />
-      <entry key="M10" value="4.585447848347092" />
-      <entry key="M15" value="4.987525803916448" />
-      <entry key="M30" value="5.930177215361882" />
-      <entry key="H1" value="8.762366604308651" />
-      <entry key="H2" value="14.528400465110384" />
-      <entry key="H4" value="21.86667643822963" />
-      <entry key="D1" value="54.87531861652124" />
-      <entry key="W1" value="726.4044403904466" />
+      <entry key="MS100" value="1.4443270170815028" />
+      <entry key="MS500" value="3.2619621556553557" />
+      <entry key="S2" value="7.6018816368185025" />
+      <entry key="S5" value="14.885293085237695" />
+      <entry key="S10" value="27.382904395782223" />
+      <entry key="S30" value="62.57770684848384" />
+      <entry key="S60" value="87.50307482996747" />
+      <entry key="M2" value="107.1525520373295" />
+      <entry key="M5" value="123.36506028002185" />
+      <entry key="M10" value="131.70546535259754" />
+      <entry key="M15" value="135.9314545343277" />
+      <entry key="M30" value="142.21853723469422" />
+      <entry key="H1" value="148.2778452593218" />
+      <entry key="H2" value="155.9038786909347" />
+      <entry key="H4" value="164.6894989609196" />
+      <entry key="D1" value="199.72302881644976" />
+      <entry key="W1" value="870.4738491519615" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -166,7 +160,7 @@
     "Spring Boot.UserinfoApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "emp-feature-branch",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/jagdi/IdeaProjects/emp-management/bookseat/src/main/resources",
@@ -401,6 +395,7 @@
       <workItem from="1791623431069" duration="32765000" />
       <workItem from="1792129233155" duration="28661000" />
       <workItem from="1792475838239" duration="15386000" />
+      <workItem from="1792562223298" duration="10532000" />
     </task>
     <servers />
   </component>
@@ -412,11 +407,27 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commite all services..!" />
+    <option name="LAST_COMMIT_MESSAGE" value="commite all services..!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
